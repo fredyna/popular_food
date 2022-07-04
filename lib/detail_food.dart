@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:popular_food/model/Food.dart';
+import 'package:popular_food/model/food.dart';
 
 class DetailFood extends StatefulWidget {
   final Food food;
@@ -59,7 +59,7 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         top: 20,
                         left: 10,
                       ),
@@ -78,7 +78,7 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                       ),
                       child: Text(
                         widget.food.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -93,7 +93,7 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                       ),
                       child: Text(
                         widget.food.description,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                           color: Color(0xffA4A4A4),
                         ),
@@ -107,18 +107,18 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Size",
                             style: TextStyle(
                               fontSize: 18.0,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Row(
                             children: [
                               ElevatedButton(
@@ -127,6 +127,13 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                     size = 'S';
                                   });
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(12),
+                                  primary: size == 'S'
+                                      ? Colors.green
+                                      : Colors.grey[300],
+                                ),
                                 child: Text(
                                   "S",
                                   style: TextStyle(
@@ -137,21 +144,21 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                         : Colors.black,
                                   ),
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(12),
-                                  primary: size == 'S'
-                                      ? Colors.green
-                                      : Colors.grey[300],
-                                ),
                               ),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               ElevatedButton(
                                 onPressed: () {
                                   setState(() {
                                     size = 'M';
                                   });
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(12),
+                                  primary: size == 'M'
+                                      ? Colors.green
+                                      : Colors.grey[300],
+                                ),
                                 child: Text(
                                   "M",
                                   style: TextStyle(
@@ -162,20 +169,21 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                         : Colors.black,
                                   ),
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                    shape: CircleBorder(),
-                                    padding: EdgeInsets.all(12),
-                                    primary: size == 'M'
-                                        ? Colors.green
-                                        : Colors.grey[300]),
                               ),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               ElevatedButton(
                                 onPressed: () {
                                   setState(() {
                                     size = 'L';
                                   });
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(12),
+                                  primary: size == 'L'
+                                      ? Colors.green
+                                      : Colors.grey[300],
+                                ),
                                 child: Text(
                                   "L",
                                   style: TextStyle(
@@ -186,32 +194,26 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                         : Colors.black,
                                   ),
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                    shape: CircleBorder(),
-                                    padding: EdgeInsets.all(12),
-                                    primary: size == 'L'
-                                        ? Colors.green
-                                        : Colors.grey[300]),
                               ),
                             ],
                           )
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Quantity",
                             style: TextStyle(
                               fontSize: 18.0,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Row(
                             children: [
                               ElevatedButton(
@@ -222,7 +224,12 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                     });
                                   }
                                 },
-                                child: Text(
+                                style: ElevatedButton.styleFrom(
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(3),
+                                  primary: Colors.grey[300],
+                                ),
+                                child: const Text(
                                   "-",
                                   style: TextStyle(
                                     fontSize: 24,
@@ -230,28 +237,28 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                     color: Colors.black,
                                   ),
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(3),
-                                  primary: Colors.grey[300],
-                                ),
                               ),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               Text(
                                 quantity.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               ElevatedButton(
                                 onPressed: () {
                                   setState(() {
                                     quantity += 1;
                                   });
                                 },
-                                child: Text(
+                                style: ElevatedButton.styleFrom(
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(3),
+                                  primary: Colors.green,
+                                ),
+                                child: const Text(
                                   "+",
                                   style: TextStyle(
                                     fontSize: 24,
@@ -259,30 +266,26 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                    shape: CircleBorder(),
-                                    padding: EdgeInsets.all(3),
-                                    primary: Colors.green),
                               ),
                             ],
                           )
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Price",
                           style: TextStyle(
                             fontSize: 18.0,
@@ -292,7 +295,7 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                         ),
                         Text(
                           currencyFormatter.format(widget.food.price),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 24.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -306,28 +309,28 @@ class _DetailMobilePageState extends State<DetailMobilePage> {
                         isFavorite = !isFavorite;
                       });
                     },
-                    child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      size: 30.0,
-                      color: isFavorite ? Colors.red : Colors.black,
-                    ),
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(14),
                       primary: Colors.grey[300],
                     ),
+                    child: Icon(
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      size: 30.0,
+                      color: isFavorite ? Colors.red : Colors.black,
+                    ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Icon(
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(14),
+                      primary: Colors.green,
+                    ),
+                    child: const Icon(
                       Icons.shopping_basket_outlined,
                       size: 30.0,
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(14),
-                      primary: Colors.green,
                     ),
                   ),
                 ],
@@ -369,7 +372,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   top: 20,
                   left: 10,
                 ),
@@ -401,30 +404,30 @@ class _DetailWebPageState extends State<DetailWebPage> {
                       children: [
                         Text(
                           widget.food.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
                           widget.food.description,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16.0,
                             color: Color(0xffA4A4A4),
                           ),
                         ),
-                        SizedBox(height: 20.0),
+                        const SizedBox(height: 20.0),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "Size",
                               style: TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Row(
                               children: [
                                 ElevatedButton(
@@ -433,6 +436,13 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                       size = 'S';
                                     });
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(12),
+                                    primary: size == 'S'
+                                        ? Colors.green
+                                        : Colors.grey[300],
+                                  ),
                                   child: Text(
                                     "S",
                                     style: TextStyle(
@@ -443,21 +453,21 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                           : Colors.black,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                    shape: CircleBorder(),
-                                    padding: EdgeInsets.all(12),
-                                    primary: size == 'S'
-                                        ? Colors.green
-                                        : Colors.grey[300],
-                                  ),
                                 ),
-                                SizedBox(width: 15),
+                                const SizedBox(width: 15),
                                 ElevatedButton(
                                   onPressed: () {
                                     setState(() {
                                       size = 'M';
                                     });
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(),
+                                    padding: EdgeInsets.all(12),
+                                    primary: size == 'M'
+                                        ? Colors.green
+                                        : Colors.grey[300],
+                                  ),
                                   child: Text(
                                     "M",
                                     style: TextStyle(
@@ -468,20 +478,21 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                           : Colors.black,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      padding: EdgeInsets.all(12),
-                                      primary: size == 'M'
-                                          ? Colors.green
-                                          : Colors.grey[300]),
                                 ),
-                                SizedBox(width: 15),
+                                const SizedBox(width: 15),
                                 ElevatedButton(
                                   onPressed: () {
                                     setState(() {
                                       size = 'L';
                                     });
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    shape: const CircleBorder(),
+                                    padding: const EdgeInsets.all(12),
+                                    primary: size == 'L'
+                                        ? Colors.green
+                                        : Colors.grey[300],
+                                  ),
                                   child: Text(
                                     "L",
                                     style: TextStyle(
@@ -492,18 +503,12 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                           : Colors.black,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      padding: EdgeInsets.all(12),
-                                      primary: size == 'L'
-                                          ? Colors.green
-                                          : Colors.grey[300]),
                                 ),
                               ],
                             )
                           ],
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -571,7 +576,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 40),
+                        const SizedBox(height: 40),
                         Padding(
                           padding: const EdgeInsets.only(right: 16),
                           child: Row(
@@ -580,7 +585,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Price",
                                       style: TextStyle(
                                         fontSize: 18.0,
@@ -591,7 +596,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                     Text(
                                       currencyFormatter
                                           .format(widget.food.price),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 24.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -605,6 +610,11 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                     isFavorite = !isFavorite;
                                   });
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(14),
+                                  primary: Colors.grey[300],
+                                ),
                                 child: Icon(
                                   isFavorite
                                       ? Icons.favorite
@@ -612,23 +622,18 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   size: 30.0,
                                   color: isFavorite ? Colors.red : Colors.black,
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(14),
-                                  primary: Colors.grey[300],
-                                ),
                               ),
                               SizedBox(width: 10),
                               ElevatedButton(
                                 onPressed: () {},
-                                child: Icon(
-                                  Icons.shopping_basket_outlined,
-                                  size: 30.0,
-                                ),
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
                                   padding: EdgeInsets.all(14),
                                   primary: Colors.green,
+                                ),
+                                child: const Icon(
+                                  Icons.shopping_basket_outlined,
+                                  size: 30.0,
                                 ),
                               ),
                             ],

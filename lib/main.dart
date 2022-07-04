@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         primarySwatch: Colors.green,
       ),
-      home: MainScreen(),
+      home: const MainScreen(),
     );
   }
 }

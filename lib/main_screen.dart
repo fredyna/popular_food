@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:popular_food/DetailFood.dart';
-import 'package:popular_food/model/Food.dart';
+import 'package:popular_food/detail_food.dart';
+import 'package:popular_food/model/food.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -21,8 +21,8 @@ class MainScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
-                  margin: EdgeInsets.all(20.0),
-                  child: Text(
+                  margin: const EdgeInsets.all(20.0),
+                  child: const Text(
                     "Popular Pizza",
                     style: TextStyle(
                       fontSize: 30.0,
@@ -69,13 +69,13 @@ class PopularFoodList extends StatelessWidget {
               }));
             },
             child: Container(
-              margin: EdgeInsets.all(10.0),
-              padding: EdgeInsets.symmetric(
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20.0,
                 vertical: 25.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xffF6F7FB),
+                color: const Color(0xffF6F7FB),
                 borderRadius: BorderRadius.circular(12.0),
               ),
               child: Row(
@@ -85,14 +85,14 @@ class PopularFoodList extends StatelessWidget {
                     width: 68,
                     height: 70,
                   ),
-                  SizedBox(width: 18.0),
+                  const SizedBox(width: 18.0),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           popularFood.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w500,
                             color: Color(0xff111111),
@@ -102,13 +102,13 @@ class PopularFoodList extends StatelessWidget {
                           popularFood.description,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color(0xffA4A4A4),
                           ),
                         ),
                         Text(
                           currencyFormatter.format(popularFood.price),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w600,
                             color: Color(0xff111111),
@@ -125,7 +125,7 @@ class PopularFoodList extends StatelessWidget {
       },
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      physics: ScrollPhysics(),
+      physics: const ScrollPhysics(),
       itemCount: popularFoodList.length,
     );
   }
@@ -139,7 +139,7 @@ class PopularFoodGrid extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     final double itemHeight = (size.height - kToolbarHeight) / 4;
     final double itemWidth = size.width / 2;
-    final _scrollController = ScrollController();
+    final scrollController = ScrollController();
 
     NumberFormat currencyFormatter = NumberFormat.currency(
       locale: 'id',
@@ -157,8 +157,8 @@ class PopularFoodGrid extends StatelessWidget {
           childAspectRatio: (itemWidth / itemHeight),
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          physics: ScrollPhysics(),
-          controller: _scrollController,
+          physics: const ScrollPhysics(),
+          controller: scrollController,
           children: popularFoodList.map((food) {
             return InkWell(
               borderRadius: BorderRadius.circular(12.0),
@@ -169,13 +169,13 @@ class PopularFoodGrid extends StatelessWidget {
               },
               child: Container(
                 height: 140,
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.symmetric(
+                margin: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
                   vertical: 25.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Color(0xffF6F7FB),
+                  color: const Color(0xffF6F7FB),
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Row(
@@ -193,7 +193,7 @@ class PopularFoodGrid extends StatelessWidget {
                         children: [
                           Text(
                             food.name,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff111111),
@@ -203,13 +203,13 @@ class PopularFoodGrid extends StatelessWidget {
                             food.description,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xffA4A4A4),
                             ),
                           ),
                           Text(
                             currencyFormatter.format(food.price),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w600,
                               color: Color(0xff111111),
